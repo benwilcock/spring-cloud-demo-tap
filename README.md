@@ -34,7 +34,7 @@ cp tap/ops/config-server-git-config-templates/shipping-service.yaml  generated/c
 ```
 
 ```
-kubectl create secret generic configserver-secret --from-literal=git-url=https://github.com/<user>/<config-repo>.git --from-literal=username=<git-username> --from-literal=password=<git-personal-access-token> -n $DEV_NAMESPACE
+kubectl create secret generic configserver-secret --from-literal=git-url=https://github.com/<user>/<config-repo>.git --from-literal=username=<git-username> --from-literal=password=<git-personal-access-token> --from-literal=git-default-label=main -n $DEV_NAMESPACE
 kubectl apply -f tap/ops/config-server.yaml -n $DEV_NAMESPACE
 ```
 
