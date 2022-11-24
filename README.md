@@ -29,7 +29,7 @@ mkdir generated/config-server-config
 
 ytt -f tap/ops/config-server-git-config-templates/gateway.yaml -v namespace=$DEV_NAMESPACE > generated/config-server-config/gateway.yaml
 ytt -f tap/ops/config-server-git-config-templates/order-service.yaml -v namespace=$DEV_NAMESPACE > generated/config-server-config/order-service.yaml
-cp tap/ops/config-server-git-config-templates/product-service generated/config-server-config/
+cp tap/ops/config-server-git-config-templates/product-service.yaml generated/config-server-config/
 cp tap/ops/config-server-git-config-templates/shipping-service.yaml  generated/config-server-config
 ```
 
