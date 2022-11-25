@@ -4,9 +4,20 @@ metadata:
   name: shipping-service
   labels:
     app.kubernetes.io/part-of: shipping-service
-    apps.tanzu.vmware.com/workload-type: queue
+    apps.tanzu.vmware.com/workload-type: worker
     apps.tanzu.vmware.com/has-tests: "true"
 spec:
+  params:
+  - name: annotations
+    value:
+      autoscaling.knative.dev/min-scale: "1"
+  - name: testing_pipeline_params
+    value:
+      source-sub-path: shipping-service
+  - name: testing_pipeline_matching_labels
+    value:
+      apps.tanzu.vmware.com/language: java
+      apps.tanzu.vmware.com/pipeline: test      
   build:
     env:
     - name: BP_JVM_VERSION

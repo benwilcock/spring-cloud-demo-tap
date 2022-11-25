@@ -2,13 +2,31 @@ apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
   name: gateway
-  annotations:
-    autoscaling.knative.dev/min-scale: "1"
   labels:
     app.kubernetes.io/part-of: gateway
     apps.tanzu.vmware.com/workload-type: web
     apps.tanzu.vmware.com/has-tests: "true"
+    apis.apps.tanzu.vmware.com/register-api: "true"
 spec:
+  params:
+  - name: annotations
+    value:
+      autoscaling.knative.dev/min-scale: "1"
+  - name: testing_pipeline_params
+    value:
+      source-sub-path: gateway
+  - name: testing_pipeline_matching_labels
+    value:
+      apps.tanzu.vmware.com/language: java
+      apps.tanzu.vmware.com/pipeline: test
+  - name: api_descriptor
+    value:
+      type: openapi
+      location:
+        path: "/v3/api-docs"
+      system: sc-architecture-system
+      owner: team-vmware-tanzu-se
+      description: "A set of API endpoints to manage the resources within the Spring Cloud Architecture app."
   build:
     env:
     - name: BP_JVM_VERSION

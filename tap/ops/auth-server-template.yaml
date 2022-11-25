@@ -18,18 +18,18 @@ spec:
     signAndVerifyKeyRef:
       name: "authserver-1-signing-key"
   identityProviders:
-    - name: "internal"
-      internalUnsafe:
-        users:
-          - username: "admin"
-            password: "$2a$12$STtDyRUdA4kUvMNdp7eU7OYs6xquWhEfVbkW8TtZ641oC5/vYCKXi"
-            roles:
-            - "customer"
-            - "admin"
-          - username: "user"
-            password: "$2a$12$STtDyRUdA4kUvMNdp7eU7OYs6xquWhEfVbkW8TtZ641oC5/vYCKXi"
-            roles:
-            - "customer"
+  - name: "internal"
+    internalUnsafe:
+      users:
+      - username: "admin"
+        password: "admin"
+        roles:
+        - "customer"
+        - "admin"
+      - username: "user"
+        password: "user"
+        roles:
+        - "customer"
 ---
 apiVersion: secretgen.k14s.io/v1alpha1
 kind: RSAKey
@@ -67,6 +67,13 @@ spec:
     #@ if/end hasattr(data.values, "tls_secret_name"):
     tls:
       secretName: #@ data.values.tls_secret_name
+    corsPolicy:
+      allowOrigin:
+        - "*" #! allows any origin
+      allowMethods:
+        - "*"
+      allowHeaders:
+        - '*'
   routes:
     - conditions:
         - prefix: /

@@ -2,14 +2,23 @@ apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
   name: order-service
-  annotations:
-    autoscaling.knative.dev/min-scale: "1"
   labels:
     app.kubernetes.io/part-of: order-service
     apps.tanzu.vmware.com/workload-type: web
     apps.tanzu.vmware.com/has-tests: "true"
     networking.knative.dev/visibility: cluster-local
 spec:
+  params:
+  - name: annotations
+    value:
+      autoscaling.knative.dev/min-scale: "1"
+  - name: testing_pipeline_params
+    value:
+      source-sub-path: order-service
+  - name: testing_pipeline_matching_labels
+    value:
+      apps.tanzu.vmware.com/language: java
+      apps.tanzu.vmware.com/pipeline: test
   build:
     env:
     - name: BP_JVM_VERSION

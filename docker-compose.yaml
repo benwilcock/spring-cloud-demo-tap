@@ -1,0 +1,11 @@
+version: "3.3"
+services:
+        configserver:
+                image: springcloud/configserver
+                ports:
+                - "8888:8888"
+                environment: 
+                - SPRING_CLOUD_CONFIG_SERVER_GIT_URI=https://github.com/benwilcock/tap-demo-config-files.git
+                - SPRING_CLOUD_CONFIG_SERVER_GIT_DEFAULT_LABEL=main
+                - SPRING_CLOUD_CONFIG_SERVER_GIT_USERNAME=benwilcock
+                - SPRING_CLOUD_CONFIG_SERVER_GIT_PASSWORD=
