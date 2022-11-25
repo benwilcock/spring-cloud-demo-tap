@@ -32,13 +32,13 @@ spec:
   serviceClaims:
   - name: rmq
     ref:
-      apiVersion: rabbitmq.com/v1beta1
-      kind: RabbitmqCluster
+      apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+      kind: ResourceClaim
       name: rmq-1
   - name: db
     ref:
-      apiVersion: sql.tanzu.vmware.com/v1
-      kind: Postgres
+      apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+      kind: ResourceClaim
       name: postgres-1
   - name: cache
     ref:
