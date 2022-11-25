@@ -5,7 +5,6 @@ metadata:
   labels:
     app.kubernetes.io/part-of: frontend
     apps.tanzu.vmware.com/workload-type: web
-    apps.tanzu.vmware.com/has-tests: "false"
     networking.knative.dev/visibility: cluster-local
 spec:
   params:
