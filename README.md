@@ -79,10 +79,16 @@ kubectl apply -f tap/ops/rabbit.yaml -n $DEV_NAMESPACE
 ### Devs:
 ```
 kubectl apply -f tap/test-pipeline.yaml -f -n $DEV_NAMESPACE
-ytt -f tap/auth-client-template.yaml -v gateway_url=https://gateway-${DEV_NAMESPACE}.example.com | kubectl apply -n $DEV_NAMESPACE -f -
-kubectl apply -f tap/workload-product-service.yaml -n $DEV_NAMESPACE
-kubectl apply -f tap/workload-order-service.yaml -n $DEV_NAMESPACE
-kubectl apply -f tap/workload-shipping-service.yaml -n $DEV_NAMESPACE
+
+ytt -f tap/auth-client-template.yaml -v gateway_url=https://gateway-${DEV_NAMESPACE}.tap.blah.cloud | kubectl apply -n $DEV_NAMESPACE -f -
+
+tanzu apps workload apply product-service -f tap/workload-product-service.yaml -n $DEV_NAMESPACE
+
+tanzu apps workload apply order-service -f tap/workload-order-service.yaml -n $DEV_NAMESPACE
+
+tanzu apps workload apply shipping-service -f tap/workload-shipping-service.yaml -n $DEV_NAMESPACE
+
+tanzu apps workload apply gateway -f tap/workload-gateway.yaml --tail
 ```
 
 ````
