@@ -18,6 +18,9 @@ spec:
     value:
       apps.tanzu.vmware.com/language: java
       apps.tanzu.vmware.com/pipeline: test      
+  - name: testing_pipeline_params
+    value:
+      source-sub-path: shipping-service
   build:
     env:
     - name: BP_JVM_VERSION
