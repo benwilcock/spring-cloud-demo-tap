@@ -11,6 +11,13 @@ spec:
   - name: annotations
     value:
       autoscaling.knative.dev/min-scale: "1"
+  - name: testing_pipeline_params
+    value:
+      source-sub-path: frontend
+  - name: testing_pipeline_matching_labels
+    value:
+      apps.tanzu.vmware.com/language: angular
+      apps.tanzu.vmware.com/pipeline: test
   source:
     git:
       url: https://github.com/benwilcock/spring-cloud-demo-tap.git
