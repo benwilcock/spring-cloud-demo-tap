@@ -2,7 +2,7 @@ export const environment = {
   production: true,
   baseHref: '/frontend/',
   authConfig: {
-    issuer: 'https://authserver-1-dev-space.emea.end2end.link',
+    issuer: 'https://authserver-1-dev-space.tap.blah.cloud',
     clientId: 'dev-space_client-registration'
   },
   endpoints: {

@@ -2,16 +2,19 @@ apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
   name: frontend
-  annotations:
-    autoscaling.knative.dev/min-scale: "1"
   labels:
     app.kubernetes.io/part-of: frontend
     apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/has-tests: "false"
     networking.knative.dev/visibility: cluster-local
 spec:
+  params:
+  - name: annotations
+    value:
+      autoscaling.knative.dev/min-scale: "1"
   source:
     git:
-      url: https://github.com/tsalm-pivotal/spring-cloud-demo-tap.git
+      url: https://github.com/benwilcock/spring-cloud-demo-tap.git
       ref:
         branch: main
     subPath: frontend
