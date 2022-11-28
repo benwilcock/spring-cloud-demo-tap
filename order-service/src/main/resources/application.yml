@@ -4,6 +4,7 @@ spring:
   config.import: "optional:configserver:"
   security.oauth2.resourceserver.jwt.jwk-set-uri: ${spring.security.oauth2.client.provider.appsso.issuer-uri}/oauth2/jwks
   cache:
+    type: redis
     redis:
       time-to-live: 60s
 wavefront.application.name: spring-cloud-demo-tap

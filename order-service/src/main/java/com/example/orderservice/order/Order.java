@@ -6,12 +6,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.ValidationException;
 
-import org.springframework.data.redis.core.RedisHash;
-
 import java.io.Serializable;
 import java.util.List;
 
-@RedisHash("Order")
 @Entity
 @Table(name = "`Order`") // Order is a reserved word
 public class Order implements Serializable { // Serializable required for Redis cache
