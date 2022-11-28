@@ -12,11 +12,11 @@ public class OrderApplicationService {
 
     private static final Logger log = LoggerFactory.getLogger(OrderApplicationService.class);
 
-    private final OrderRepository orderRepository;
+    private final OrderJpaRepository orderRepository;
     private final ProductService productService;
     private final ShippingService shippingService;
 
-    OrderApplicationService(OrderRepository orderRepository, ProductService productService,
+    OrderApplicationService(OrderJpaRepository orderRepository, ProductService productService,
                             ShippingService shippingService) {
         this.orderRepository = orderRepository;
         this.productService = productService;
