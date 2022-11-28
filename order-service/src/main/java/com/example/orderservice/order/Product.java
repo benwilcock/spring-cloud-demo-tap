@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
 
+import org.springframework.data.redis.core.RedisHash;
+
+@RedisHash
 @JsonIgnoreProperties(ignoreUnknown = true)
 class Product implements Serializable { // Serializable required for Redis cache
 
