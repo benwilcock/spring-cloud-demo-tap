@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 import org.springframework.data.redis.core.RedisHash;
 
-@RedisHash
+@RedisHash("Product")
 @JsonIgnoreProperties(ignoreUnknown = true)
 class Product implements Serializable { // Serializable required for Redis cache
 
