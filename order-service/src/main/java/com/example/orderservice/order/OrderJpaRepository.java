@@ -11,15 +11,15 @@ import java.util.Optional;
 @Repository
 public interface OrderJpaRepository extends JpaRepository<Order, Long> {
 
-    @Cacheable("Orders")
+    @Cacheable("OrdersCache")
     @Override
     List<Order> findAll();
 
-    @Cacheable("Order")
+    @Cacheable("OrderCache")
     @Override
     Optional<Order> findById(Long id);
 
-    @CacheEvict(cacheNames = {"Order", "Orders"}, allEntries = true)
+    @CacheEvict(cacheNames = {"OrderCache", "OrdersCache"}, allEntries = true)
     @Override
     <S extends Order> S save(S order);
 }
