@@ -11,5 +11,5 @@ export const authCodeFlowConfig: AuthConfig = {
   timeoutFactor: 0.01,
   logoutUrl: environment.authConfig.issuer + '/logout',
   redirectUriAsPostLogoutRedirectUriFallback: true,
-  requireHttps: false
+  requireHttps: environment.authConfig.requireHttps
 };
