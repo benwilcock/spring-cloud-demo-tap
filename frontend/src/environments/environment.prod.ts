@@ -4,7 +4,7 @@ export const environment = {
   authConfig: {
     requireHttps: false,
     issuer: 'http://authserver-1-dev.tap.blah.cloud',
-    clientId: 'dev-space_client-registration'
+    clientId: 'dev_client-registration'
   },
   endpoints: {
     orders: window.location.origin + '/services/order-service/api/v1/orders',
