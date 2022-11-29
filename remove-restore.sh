@@ -16,7 +16,7 @@ kubectl create secret generic configserver-secret \
 -n $DEV_NAMESPACE
 
 kubectl apply -f tap/ops/config-server.yaml -n $DEV_NAMESPACE
-ytt -f tap/auth-client-template.yaml -v gateway_url=https://gateway-${DEV_NAMESPACE}.tap.blah.cloud | kubectl apply -n $DEV_NAMESPACE -f -
+ytt -f tap/auth-client-template.yaml -v gateway_url=http://gateway-${DEV_NAMESPACE}.tap.blah.cloud | kubectl apply -n $DEV_NAMESPACE -f -
 
 # Remove everything
 # tanzu apps workload delete gateway -y
