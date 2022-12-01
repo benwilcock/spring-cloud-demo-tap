@@ -127,3 +127,22 @@ sed -i '' "s/https:\/\/authserver-1-dev-space.tap.blah.cloud/https:\/\/authserve
 kubectl apply -f tap/workload-frontend.yaml -n $DEV_NAMESPACE
 ```
 
+## TechDocs
+
+You need an AWS bucket. To setup S3 see https://backstage.io/docs/features/techdocs/using-cloud-storage#configuring-aws-s3-bucket-with-techdocs 
+
+Needs AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY and AWS_REGION and AWS_BUCKET_NAME set as ENV variables...
+
+Start in the `tap/catalog` folder. 
+
+```bash
+npx @techdocs/cli generate --source-dir . --output-dir ./site
+
+array=( Component/gateway Component/order-service Component/product-service Component/frontend Component/shipping-service Resource/authserver-1 Resource/configserver Resource/gemfire-1 Resource/observability Resource/postgres-1 Resource/rmq-1 Location/sc-architecture-location System/sc-architecture-system)
+for i in "${array[@]}"
+do
+npx @techdocs/cli publish --publisher-type awsS3 --storage-name $AWS_BUCKET_NAME --entity default/$i --directory ./site
+done
+
+```
+
