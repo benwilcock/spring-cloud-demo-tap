@@ -8,9 +8,6 @@ metadata:
     apps.tanzu.vmware.com/has-tests: "true"
     apis.apps.tanzu.vmware.com/register-api: "true"
 spec:
-  env:
-    - name: DEBUG
-      value: "true"
   params:
   - name: annotations
     value:
