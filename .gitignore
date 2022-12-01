@@ -1,6 +1,7 @@
 HELP.md
 target/
 generated/
+tap/catalog/site/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
