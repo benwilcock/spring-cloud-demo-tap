@@ -2,31 +2,31 @@
 ---
 spring.cloud.gateway:
   routes:
-  - id: product-service-route
-    uri: #@ "http://product-service." + data.values.namespace
-    predicates:
-    - Path=/services/product-service/**
-    filters:
-    - StripPrefix=2
-    - TokenRelay=
-  - id: order-service-route
-    uri: #@ "http://order-service." + data.values.namespace
-    predicates:
-    - Path=/services/order-service/**
-    filters:
-    - StripPrefix=2
-    - TokenRelay=
-  - id: frontend-route
-    uri: #@ http://frontend." + data.values.namespace
-    predicates:
-    - Path=/frontend/**
-    filters:
-    - StripPrefix=1
+    - id: product-service-route
+      uri: #@ "http://product-service." + data.values.namespace
+      predicates:
+        - Path=/services/product-service/**
+      filters:
+        - StripPrefix=2
+        - TokenRelay=
+    - id: order-service-route
+      uri: #@ "http://order-service." + data.values.namespace
+      predicates:
+        - Path=/services/order-service/**
+      filters:
+        - StripPrefix=2
+        - TokenRelay=
+    - id: frontend-route
+      uri: #@ http://frontend." + data.values.namespace
+      predicates:
+        - Path=/frontend/**
+      filters:
+        - StripPrefix=1
   globalcors.corsConfigurations:
-    '[/**]':
+    "[/**]":
       allowedOrigins:
         - "*"
       allowedMethods:
         - "*"
       allowedHeaders:
-        - "*" 
+        - "*"
