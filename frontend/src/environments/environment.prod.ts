@@ -2,8 +2,8 @@ export const environment = {
   production: true,
   baseHref: '/frontend/',
   authConfig: {
-    requireHttps: false,
-    issuer: 'http://authserver-1-dev.tap.blah.cloud',
+    requireHttps: true,
+    issuer: 'https://authserver-1-dev.tap-next.blah.cloud',
     clientId: 'dev_client-registration'
   },
   endpoints: {

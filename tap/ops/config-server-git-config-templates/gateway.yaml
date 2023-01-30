@@ -17,7 +17,7 @@ spring.cloud.gateway:
         - StripPrefix=2
         - TokenRelay=
     - id: frontend-route
-      uri: #@ http://frontend." + data.values.namespace
+      uri: #@ "http://frontend." + data.values.namespace
       predicates:
         - Path=/frontend/**
       filters:

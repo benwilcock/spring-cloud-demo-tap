@@ -16,11 +16,8 @@
 ## Setup
 
 ```
-export DEV_NAMESPACE=<dev-namespace>
-```
-
-```
-export DEV_NAMESPACE=<dev-namespace>
+export DEV_NAMESPACE=<dev-namespace> # e.g. "dev"
+export DEV_ENVIRONMENT=<dev-environment> # e.g. "tap-next"
 ```
 
 ### Ops (should be automated and provided as self-service for prod env)
