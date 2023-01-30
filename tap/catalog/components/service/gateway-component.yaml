@@ -6,18 +6,18 @@ metadata:
   tags:
     - sc-architecture
   annotations:
-    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=gateway'
-    'backstage.io/techdocs-ref': dir:../../
+    "backstage.io/kubernetes-label-selector": "app.kubernetes.io/part-of=gateway"
+    "backstage.io/techdocs-ref": dir:../../
 spec:
   type: service
   lifecycle: experimental
   owner: team-vmware-tanzu-se
   system: sc-architecture-system
   dependsOn:
-  - Resource:authserver-1
-  - Resource:configserver
-  - Resource:observability
-  - Component:order-service
-  - Component:product-service
+    - Resource:authserver-1
+    - Resource:configserver
+    - Resource:observability
+    - Component:order-service
+    - Component:product-service
   providesApis:
-  - gateway-dev.tap.blah.cloud
+    - gateway-dev.tap-next.blah.cloud
