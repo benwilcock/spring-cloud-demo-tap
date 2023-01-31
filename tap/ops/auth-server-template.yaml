@@ -71,10 +71,6 @@ spec:
       services:
         - name: authserver-1
           port: 80
-          responseHeadersPolicy:
-            set:
-              - name: Access-Control-Allow-Origin
-                value: "*"
   virtualhost:
     corsPolicy:
       allowOrigin:
