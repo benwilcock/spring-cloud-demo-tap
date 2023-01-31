@@ -65,18 +65,6 @@ metadata:
   name: authserver-1
   namespace: #@ data.values.dev_namespace
 spec:
-  virtualhost:
-    fqdn: #@ data.values.issuer_uri.replace("https://", "").replace("http://", "")
-    #@ if/end hasattr(data.values, "tls_secret_name"):
-    tls:
-      secretName: #@ data.values.tls_secret_name
-    corsPolicy:
-      allowOrigin:
-        - "*" #! allows any origin
-      allowMethods:
-        - "*"
-      allowHeaders:
-        - "*"
   routes:
     - conditions:
         - prefix: /
@@ -87,3 +75,15 @@ spec:
             set:
               - name: Access-Control-Allow-Origin
                 value: "*"
+  virtualhost:
+    corsPolicy:
+      allowOrigin:
+        - "*" #! allows any origin
+      allowMethods:
+        - "*"
+      allowHeaders:
+        - "*"
+    fqdn: #@ data.values.issuer_uri.replace("https://", "").replace("http://", "")
+    #@ if/end hasattr(data.values, "tls_secret_name"):
+    tls:
+      secretName: #@ data.values.tls_secret_name

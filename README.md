@@ -62,7 +62,7 @@ ytt -f tap/ops/auth-server-template.yaml -v dev_namespace=$DEV_NAMESPACE -v issu
 
 Otherwise:
 ```
-ytt -f tap/ops/auth-server-template.yaml -v dev_namespace=$DEV_NAMESPACE -v issuer_uri=http://authserver-1-${DEV_NAMESPACE}.tap.blah.cloud | kubectl apply -f -
+ytt -f tap/ops/auth-server-template.yaml -v dev_namespace=$DEV_NAMESPACE -v issuer_uri=https://authserver-1-${DEV_NAMESPACE}.tap.blah.cloud | kubectl apply -f -
 ```
 
 #### Observability
