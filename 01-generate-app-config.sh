@@ -10,9 +10,11 @@ export TAP_AUTH_SERVER_NAME='authserver-1'
 export TAP_AUTH_SERVER_SECRET_NAME='authserver-1-auth-server'
 export WAVEFRONT_API_URI='https://vmwareprod.wavefront.com'
 
-echo "Creating the folder that holds the configuration"
-rm -rf ./generated/config-server-config/
-mkdir ./generated/config-server-config
+echo "Deleting the folder that holds the old configuration"
+rm -r generated
+
+echo "Creating the folder that will hold the new configuration"
+mkdir -p generated/config-server-config
 
 echo "Creating & copying the Microservices configuration files that will be served from Spring Cloud Config Server."
 envsubst < tap/ops/config-server-git-config-templates/gateway.yaml > generated/config-server-config/gateway.yaml
