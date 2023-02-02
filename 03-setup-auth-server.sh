@@ -6,6 +6,7 @@
 export TAP_DEV_NAMESPACE='dev'
 
 # Spin up the Auth server using the config created above
-kubectl apply -n $TAP_DEV_NAMESPACE -f generated/config-server-config/auth-server.yaml
-kubectl apply -n $TAP_DEV_NAMESPACE -f generated/config-server-config/auth-client.yaml
+kubectl apply -n $TAP_DEV_NAMESPACE -f generated/config-server-config/auth-server.yaml # --dry-run=server
+kubectl apply -n $TAP_DEV_NAMESPACE -f generated/config-server-config/auth-client.yaml # --dry-run=server
 
+exit 0

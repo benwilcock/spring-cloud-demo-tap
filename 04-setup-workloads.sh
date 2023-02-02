@@ -14,3 +14,5 @@ tanzu apps workload apply frontend -f tap/workload-frontend.yaml -n $TAP_DEV_NAM
 
 # Watch everything deploy
 watch tanzu apps workload list
+
+exit 0

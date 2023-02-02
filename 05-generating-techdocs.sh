@@ -20,3 +20,5 @@ do
 npx @techdocs/cli publish --publisher-type awsS3 --storage-name $AWS_BUCKET_NAME --entity default/$i --directory ./site
 done
 cd ../..
+
+exit 0

@@ -11,8 +11,9 @@ kubectl create secret generic configserver-secret \
 --from-literal=git-default-label=main \
 --from-literal=username=benwilcock \
 --from-literal=password=$TAP_DEMO_CONFIG_SVR_GITHUB_ACCESS_TOKEN \
--n $TAP_DEV_NAMESPACE
+-n $TAP_DEV_NAMESPACE # --dry-run=server
 
 # Spin up the Config server in K8s serving the config above
-kubectl apply -f tap/ops/config-server.yaml -n $DEV_NAMESPACE
+kubectl apply -f tap/ops/config-server.yaml -n $DEV_NAMESPACE # --dry-run=server
 
+exit 0
