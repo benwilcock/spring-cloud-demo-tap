@@ -1,23 +1,21 @@
-#@ load("@ytt:data", "data")
----
 spring.cloud.gateway:
   routes:
     - id: product-service-route
-      uri: #@ "http://product-service." + data.values.namespace
+      uri: http://product-service.$TAP_DEV_NAMESPACE
       predicates:
         - Path=/services/product-service/**
       filters:
         - StripPrefix=2
         - TokenRelay=
     - id: order-service-route
-      uri: #@ "http://order-service." + data.values.namespace
+      uri: http://order-service.$TAP_DEV_NAMESPACE
       predicates:
         - Path=/services/order-service/**
       filters:
         - StripPrefix=2
         - TokenRelay=
     - id: frontend-route
-      uri: #@ "http://frontend." + data.values.namespace
+      uri: http://frontend.$TAP_DEV_NAMESPACE
       predicates:
         - Path=/frontend/**
       filters:

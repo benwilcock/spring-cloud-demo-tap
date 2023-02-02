@@ -1,4 +1,3 @@
-#@ load("@ytt:data", "data")
 apiVersion: sso.apps.tanzu.vmware.com/v1alpha1
 kind: ClientRegistration
 metadata:
@@ -6,21 +5,21 @@ metadata:
 spec:
   authServerSelector:
     matchLabels:
-      name: authserver-1
+      name: $TAP_AUTH_SERVER_NAME
   redirectURIs:
-  - #@ data.values.gateway_url + "/frontend/index.html"
+    - https://gateway-$TAP_DEV_NAMESPACE.$TAP_DEV_ENVIRONMENT.$TAP_MASTER_DOMAIN/frontend/index.html
   requireUserConsent: false
   clientAuthenticationMethod: none
   authorizationGrantTypes:
-    - "client_credentials"
-    - "authorization_code"
-    - "refresh_token"
+    - client_credentials
+    - authorization_code
+    - refresh_token
   scopes:
-  - name: openid
-  - name: offline_access
-  - name: email
-  - name: profile
-  - name: roles
+    - name: openid
+    - name: offline_access
+    - name: email
+    - name: profile
+    - name: roles
 ---
 apiVersion: services.apps.tanzu.vmware.com/v1alpha1
 kind: ResourceClaim
