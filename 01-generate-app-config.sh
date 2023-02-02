@@ -30,7 +30,6 @@ envsubst < tap/auth-client-template.yaml > generated/config-server-config/auth-c
 
 echo "Copying the files to the Local GitHub repo folder."
 \cp generated/config-server-config/* ../tap-demo-config-files
-# # ^^ Don't forget to push these config files to GitHub! ^^^
 
 echo "Committing & pushing the Config Server served configuration files."
 cd ../tap-demo-config-files
@@ -42,8 +41,8 @@ echo "Creating the environment config for the frontend."
 envsubst < tap/environment.prod.template.ts > generated/environment.prod.ts
 cp generated/environment.prod.ts frontend/src/environments/environment.prod.ts
 
-# echo "Committing & pushing the frontend configuration files."
-# git commit -am 'generated fresh frontent environment configuration'
+echo "Committing & pushing the frontend configuration files."
+git commit -am 'generated fresh configuration'
 # git push origin main
 
 echo "Creating the Wavefront observability configuration file."
