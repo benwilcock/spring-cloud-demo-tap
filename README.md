@@ -143,3 +143,13 @@ done
 
 ```
 
+## Troubleshooting services using a 'Curl' POD
+
+Checking the config listed for the Gateway, for example:
+
+```bash
+kubectl run mycurlpod --image=curlimages/curl -i --tty -- sh
+curl http://configserver/gateway/main
+kubectl delete pod mycurlpod
+```
+

@@ -1,5 +1,3 @@
-#@ load("@ytt:data", "data")
----
 apiVersion: v1
 kind: Secret
 metadata:
@@ -7,8 +5,8 @@ metadata:
 type: Opaque
 stringData:
   type: wavefront
-  uri: #@ data.values.uri
-  api-token: #@ data.values.api_token
+  uri: $WAVEFRONT_API_URI
+  api-token: $WAVEFRONT_API_TOKEN
 ---
 apiVersion: services.apps.tanzu.vmware.com/v1alpha1
 kind: ResourceClaim

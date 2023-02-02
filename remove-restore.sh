@@ -3,28 +3,7 @@
 # These are the commands we've been using to run the full app on GKE
 # Updated for TAP 1.4 on 30/01/2023
 
-export TAP_MASTER_DOMAIN='blah.cloud'
 export TAP_DEV_NAMESPACE='dev'
-export TAP_DEV_ENVIRONMENT='tap-next'
-export TAP_AUTH_SERVER_NAME='authserver-1'
-export TAP_AUTH_SERVER_SECRET_NAME='authserver-1-auth-server'
-
-# Create & copy the Microservices configuration files that will be served from Spring Cloud Config Server.
-mkdir generated/config-server-config
-envsubst < tap/ops/config-server-git-config-templates/gateway.yaml > generated/config-server-config/gateway.yaml
-envsubst < tap/ops/config-server-git-config-templates/order-service.yaml > generated/config-server-config/order-service.yaml
-cp tap/ops/config-server-git-config-templates/product-service.yaml generated/config-server-config/
-cp tap/ops/config-server-git-config-templates/shipping-service.yaml  generated/config-server-config
-
-# Create & configure the Authorization Server configuration files
-envsubst < tap/ops/auth-server-template.yaml > generated/config-server-config/auth-server.yaml
-
-# Create & configure the Authorization Client configuration files
-envsubst < tap/auth-client-template.yaml > generated/config-server-config/auth-client.yaml
-
-# vv Don't forget to push these config files to GitHub! vvv
-\cp generated/config-server-config/* ../tap-demo-config-files
-# ^^ Don't forget to push these config files to GitHub! ^^^
 
 # Create config settings required by the Spring Cloud Config Server
 kubectl create secret generic configserver-secret \
