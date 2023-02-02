@@ -46,7 +46,7 @@ envsubst < tap/ops/observability-template.yaml > generated/observability.yaml
 
 echo "Committing & pushing the frontend configuration files."
 git commit -am 'generated fresh configuration'
-# git push origin main
+git push origin main
 
 echo "Finished setting up the application configuration"
 exit 0
