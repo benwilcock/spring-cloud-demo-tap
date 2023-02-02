@@ -41,13 +41,12 @@ echo "Creating the environment config for the frontend."
 envsubst < tap/environment.prod.template.ts > generated/environment.prod.ts
 cp generated/environment.prod.ts frontend/src/environments/environment.prod.ts
 
-echo "Committing & pushing the frontend configuration files."
-git commit -am 'generated fresh configuration'
-# git push origin main
-
 echo "Creating the Wavefront observability configuration file."
 envsubst < tap/ops/observability-template.yaml > generated/observability.yaml
 
+echo "Committing & pushing the frontend configuration files."
+git commit -am 'generated fresh configuration'
+# git push origin main
 
 echo "Finished setting up the application configuration"
 exit 0
