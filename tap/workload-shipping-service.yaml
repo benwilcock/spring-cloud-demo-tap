@@ -5,6 +5,7 @@ metadata:
   labels:
     app.kubernetes.io/part-of: shipping-service
     apps.tanzu.vmware.com/workload-type: worker
+    apps.tanzu.vmware.com/auto-configure-actuators: "true"
     apps.tanzu.vmware.com/has-tests: "true"
 spec:
   params:
