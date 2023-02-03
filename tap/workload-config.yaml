@@ -33,9 +33,9 @@ spec:
       ref:
         branch: experiment-add-config-server
     subPath: config
-  serviceClaims:
-  - name: observability
-    ref:
-      apiVersion: services.apps.tanzu.vmware.com/v1alpha1
-      kind: ResourceClaim
-      name: observability-binding-compatible
+  # serviceClaims:
+  # - name: observability
+  #   ref:
+  #     apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+  #     kind: ResourceClaim
+  #     name: observability-binding-compatible

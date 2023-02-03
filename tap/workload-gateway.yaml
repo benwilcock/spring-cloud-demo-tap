@@ -38,11 +38,6 @@ spec:
         branch: main
     subPath: gateway
   serviceClaims:
-  - name: config-server
-    ref:
-      apiVersion: services.apps.tanzu.vmware.com/v1alpha1
-      kind: ResourceClaim
-      name: configserver-binding-compatible
   - name: observability
     ref:
       apiVersion: services.apps.tanzu.vmware.com/v1alpha1
