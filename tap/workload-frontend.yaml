@@ -23,7 +23,7 @@ spec:
     git:
       url: https://github.com/benwilcock/spring-cloud-demo-tap.git
       ref:
-        branch: experiment-add-config-server
+        branch: main
     subPath: frontend
   build:
     env:
