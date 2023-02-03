@@ -7,6 +7,6 @@ tanzu apps workload apply config-server \
 --env "MANAGEMENT_WAVEFRONT_API-TOKEN=${WAVEFRONT_API_TOKEN}" \
 --env "MANAGEMENT.WAVEFRONT.URI=https://vmwareprod.wavefront.com" \
 --tail \
--f tap/workload-config.yaml
+-f tap/workload-config-server.yaml
 
 exit 0

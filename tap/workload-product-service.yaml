@@ -27,14 +27,9 @@ spec:
     git:
       url: https://github.com/benwilcock/spring-cloud-demo-tap.git
       ref:
-        branch: main
+        branch: experiment-add-config-server
     subPath: product-service
   serviceClaims:
-  - name: config-server
-    ref:
-      apiVersion: services.apps.tanzu.vmware.com/v1alpha1
-      kind: ResourceClaim
-      name: configserver-binding-compatible
   - name: auth-client
     ref:
       apiVersion: services.apps.tanzu.vmware.com/v1alpha1

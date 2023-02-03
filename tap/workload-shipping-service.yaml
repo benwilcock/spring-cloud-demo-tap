@@ -29,7 +29,7 @@ spec:
     git:
       url: https://github.com/benwilcock/spring-cloud-demo-tap.git
       ref:
-        branch: main
+        branch: experiment-add-config-server
     subPath: shipping-service
   serviceClaims:
   - name: rmq
@@ -37,11 +37,6 @@ spec:
       apiVersion: services.apps.tanzu.vmware.com/v1alpha1
       kind: ResourceClaim
       name: rmq-1
-  - name: config-server
-    ref:
-      apiVersion: services.apps.tanzu.vmware.com/v1alpha1
-      kind: ResourceClaim
-      name: configserver-binding-compatible
   - name: observability
     ref:
       apiVersion: services.apps.tanzu.vmware.com/v1alpha1
