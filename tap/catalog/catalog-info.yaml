@@ -1,13 +1,14 @@
 apiVersion: backstage.io/v1alpha1
 kind: Location
 metadata:
-  name: sc-architecture-location
+  name: tanzu-shop-location
   description: Spring Cloud Architecture on TAP
   annotations:
     'backstage.io/techdocs-ref': dir:.
 spec:
   targets:
-    - ./systems/sc-architecture-system.yaml
+    - ./systems/tanzu-shop.yaml
+    - ./components/service/config-component.yaml
     - ./components/service/product-component.yaml
     - ./components/service/order-component.yaml
     - ./components/service/shipping-component.yaml

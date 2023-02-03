@@ -12,10 +12,11 @@ tanzu apps workload delete frontend -y
 tanzu apps workload delete product-service -y
 tanzu apps workload delete shipping-service -y
 tanzu apps workload delete order-service -y
+tanzu apps workload delete config-server -y
 
 echo "Removing all the manually created resources from Kubernetes"
-kubectl delete secret configserver-secret -n $TAP_DEV_NAMESPACE --dry-run=$DRY_RUN
-kubectl delete -n $TAP_DEV_NAMESPACE -f tap/ops/config-server.yaml --dry-run=$DRY_RUN
+# kubectl delete -n $TAP_DEV_NAMESPACE -f tap/ops/config-server.yaml --dry-run=$DRY_RUN
+# kubectl delete secret configserver-secret -n $TAP_DEV_NAMESPACE --dry-run=$DRY_RUN
 kubectl delete -n $TAP_DEV_NAMESPACE -f generated/config-server-config/auth-server.yaml --dry-run=$DRY_RUN
 kubectl delete -n $TAP_DEV_NAMESPACE -f generated/config-server-config/auth-client.yaml --dry-run=$DRY_RUN
 kubectl delete -n $TAP_DEV_NAMESPACE -f generated/observability.yaml --dry-run=$DRY_RUN

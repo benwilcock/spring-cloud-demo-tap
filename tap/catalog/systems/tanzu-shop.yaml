@@ -1,9 +1,9 @@
 apiVersion: backstage.io/v1alpha1
 kind: System
 metadata:
-  name: sc-architecture-system
+  name: tanzu-shop
   description: Spring Cloud Architecture on TAP
   annotations:
     'backstage.io/techdocs-ref': dir:../
 spec:
-  owner: team-vmware-tanzu-se
+  owner: tanzu-tmm
