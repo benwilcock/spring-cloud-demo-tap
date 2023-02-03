@@ -1,9 +1,9 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: target-project
+  name: config-server
   annotations:
-    "backstage.io/kubernetes-label-selector": "app.kubernetes.io/part-of=target-project"
+    "backstage.io/kubernetes-label-selector": "app.kubernetes.io/part-of=config-server"
 spec:
   type: service
   lifecycle: experimental
