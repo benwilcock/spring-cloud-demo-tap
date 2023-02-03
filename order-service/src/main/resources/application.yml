@@ -1,7 +1,7 @@
 spring:
   application.name: order-service # for config server
   jpa.hibernate.ddl-auto: update
-  config.import: "optional:configserver:"
+  config.import: "optional:configserver:http://config-server.dev"
   security.oauth2.resourceserver.jwt.jwk-set-uri: ${spring.security.oauth2.client.provider.appsso.issuer-uri}/oauth2/jwks
   cache:
     type: redis
