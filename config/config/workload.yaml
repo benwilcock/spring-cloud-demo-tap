@@ -1,0 +1,35 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  name: config-server
+  labels:
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/auto-configure-actuators: "true"
+    app.kubernetes.io/part-of: config-server  
+    networking.knative.dev/visibility: cluster-local
+spec:
+  env:
+    - name: SPRING_CLOUD_CONFIG_SERVER_GIT_URI
+      value: https://github.com/benwilcock/tap-demo-config-files.git
+  params:
+  - name: annotations
+    value:
+      autoscaling.knative.dev/min-scale: "1"
+  - name: testing_pipeline_params
+    value:
+      source-sub-path: order-service
+  - name: testing_pipeline_matching_labels
+    value:
+      apps.tanzu.vmware.com/language: java
+      apps.tanzu.vmware.com/pipeline: test
+  build:
+    env:
+    - name: BP_JVM_VERSION
+      value: "17"
+  source:
+    git:
+      url: https://github.com/benwilcock/spring-cloud-demo-tap.git
+      ref:
+        branch: main
+    subPath: config
