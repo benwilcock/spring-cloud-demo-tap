@@ -11,7 +11,7 @@ metadata:
 spec:
   type: service
   lifecycle: experimental
-  owner: tanzu-tmm
+  owner: tanzu-tmm-team
   system: tanzu-shop
   dependsOn:
   providesApis:
