@@ -25,8 +25,8 @@ spec:
       type: openapi
       location:
         path: "/v3/api-docs"
-      system: sc-architecture-system
-      owner: team-vmware-tanzu-se
+      system: tanzu-shop
+      owner: tanzu-shop-team
       description: "A set of API endpoints to manage the resources within the Spring Cloud Architecture app."
   build:
     env:
