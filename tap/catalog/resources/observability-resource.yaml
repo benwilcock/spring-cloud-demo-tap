@@ -7,5 +7,5 @@ metadata:
     'backstage.io/techdocs-ref': dir:../
 spec:
   type: observability
-  owner: mambg-tmm-team
-  system: sc-architecture-system
+  owner: tanzu-shop-team
+  system: tanzu-shop
