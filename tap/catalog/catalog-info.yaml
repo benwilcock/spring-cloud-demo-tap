@@ -14,9 +14,6 @@ spec:
     - ./components/service/shipping-component.yaml
     - ./components/service/gateway-component.yaml
     - ./components/frontend-component.yaml
-    - ./groups/department.yaml
-    - ./groups/org.yaml
-    - ./groups/team.yaml
     - ./resources/auth-server-resource.yaml
     - ./resources/config-server-resource.yaml
     - ./resources/gemfire-resource.yaml
