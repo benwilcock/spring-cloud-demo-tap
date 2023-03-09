@@ -7,5 +7,5 @@ metadata:
     'backstage.io/techdocs-ref': dir:../
 spec:
   type: messaging-system
-  owner: team-vmware-tanzu-se
+  owner: mambg-tmm-team
   system: sc-architecture-system
