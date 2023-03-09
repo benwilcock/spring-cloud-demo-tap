@@ -6,4 +6,4 @@ metadata:
   annotations:
     'backstage.io/techdocs-ref': dir:../
 spec:
-  owner: tanzu-tmm
+  owner: mambg-tmm-team
