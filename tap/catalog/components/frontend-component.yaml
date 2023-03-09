@@ -11,7 +11,7 @@ metadata:
 spec:
   type: service
   lifecycle: experimental
-  owner: tanzu-tmm-team
+  owner: mambg-tmm-team
   system: sc-architecture-system
   dependsOn:
     - Component:gateway
