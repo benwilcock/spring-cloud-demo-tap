@@ -3,8 +3,6 @@ kind: Location
 metadata:
   name: tanzu-shop-location
   description: Spring Cloud Architecture on TAP
-  annotations:
-    'backstage.io/techdocs-ref': dir:.
 spec:
   targets:
     - ./systems/tanzu-shop.yaml
