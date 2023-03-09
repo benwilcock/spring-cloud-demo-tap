@@ -12,7 +12,7 @@ spec:
   type: service
   lifecycle: experimental
   owner: tanzu-shop-team
-  system: sc-architecture-system
+  system: tanzu-shop
   dependsOn:
     - Component:gateway
   consumesApis:
